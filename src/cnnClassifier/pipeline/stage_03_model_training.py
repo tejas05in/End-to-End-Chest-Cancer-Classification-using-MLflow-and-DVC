@@ -1,5 +1,5 @@
 from cnnClassifier.config.configuration import ConfigurationManager
-from cnnClassifier.components.training import Training
+from cnnClassifier.components.model_training import ModelTraining
 from cnnClassifier import logger
 
 
@@ -13,7 +13,7 @@ class ModelTrainingPipeline:
     def main(self):
         config = ConfigurationManager()
         training_config = config.get_training_config()
-        training = Training(config=training_config)
+        training = ModelTraining(config=training_config)
         training.get_base_model()
         training.train_valid_generator()
         training.train()

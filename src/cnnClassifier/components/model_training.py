@@ -3,7 +3,7 @@ from cnnClassifier.entity.config_entity import TrainingConfig
 from pathlib import Path
 
 
-class Training:
+class ModelTraining:
     def __init__(self, config: TrainingConfig):
         self.config = config
 
