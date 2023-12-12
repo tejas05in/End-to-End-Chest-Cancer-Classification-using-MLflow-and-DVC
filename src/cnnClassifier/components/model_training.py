@@ -1,6 +1,8 @@
 import tensorflow as tf
 from cnnClassifier.entity.config_entity import TrainingConfig
 from pathlib import Path
+import shutil
+import os
 
 
 class ModelTraining:
@@ -76,3 +78,8 @@ class ModelTraining:
             path=self.config.trained_model_path,
             model=self.model
         )
+
+        save_path = os.path.join('model', 'model.h5')
+        self.save_model(path=save_path,
+                        model=self.model
+                        )
